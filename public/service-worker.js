@@ -2,8 +2,8 @@ const FILES_TO_CACHE = [
     '/',
     '/index.html',
     '/index.js',
-    '/manifest.webmanifest',
-    '/style.css',
+    "/manifest.webmanifest",
+    '/styles.css',
     '/icons/icon-192x192.png',
     '/icons/icon-512x512.png',
   ];
@@ -24,22 +24,22 @@ const FILES_TO_CACHE = [
   });
   
   // activate
-//   self.addEventListener("activate", function(evt) {
-//     evt.waitUntil(
-//       caches.keys().then(keyList => {
-//         return Promise.all(
-//           keyList.map(key => {
-//             if (key !== CACHE_NAME && key !== DATA_CACHE_NAME) {
-//               console.log("Removing old cache data", key);
-//               return caches.delete(key);
-//             }
-//           })
-//         );
-//       })
-//     );
+  self.addEventListener("activate", function(evt) {
+    evt.waitUntil(
+      caches.keys().then(keyList => {
+        return Promise.all(
+          keyList.map(key => {
+            if (key !== CACHE_NAME && key !== DATA_CACHE_NAME) {
+              console.log("Removing old cache data", key);
+              return caches.delete(key);
+            }
+          })
+        );
+      })
+    );
   
-//     self.clients.claim();
-//   });
+    self.clients.claim();
+  });
   
   // fetch
   self.addEventListener("fetch", function(evt) {
