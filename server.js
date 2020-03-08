@@ -5,6 +5,8 @@ const compression = require("compression");
 
 const PORT = 3300;
 
+const MONGODB_URI = process.env.MONGODB_URI
+
 const app = express();
 
 app.use(logger("dev"));
@@ -15,7 +17,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://budget:tracker1@ds053428.mlab.com:53428/heroku_zn367pfz", {
+mongoose.connect(MONGODB_URI || "mongodb://budget:tracker1@ds053428.mlab.com:53428/heroku_zn367pfz", {
   useNewUrlParser: true,
   useFindAndModify: false
 });
