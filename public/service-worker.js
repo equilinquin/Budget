@@ -6,6 +6,7 @@ const FILES_TO_CACHE = [
     '/styles.css',
     '/icons/icon-192x192.png',
     '/icons/icon-512x512.png',
+    '/db.js'
   ];
   
   const CACHE_NAME = "static-cache-v3";
@@ -24,33 +25,33 @@ const FILES_TO_CACHE = [
   });
   
   // activate
-//   self.addEventListener("activate", function(evt) {
-//     evt.waitUntil(
-//       caches.keys().then(keyList => {
-//         return Promise.all(
-//           keyList.map(key => {
-//             if (key !== CACHE_NAME && key !== DATA_CACHE_NAME) {
-//               console.log("Removing old cache data", key);
-//               return caches.delete(key);
-//             }
-//           })
-//         );
-//       })
-//     );
+  self.addEventListener("activate", function(evt) {
+    evt.waitUntil(
+      caches.keys().then(keyList => {
+        return Promise.all(
+          keyList.map(key => {
+            if (key !== CACHE_NAME && key !== DATA_CACHE_NAME) {
+              console.log("Removing old cache data", key);
+              return caches.delete(key);
+            }
+          })
+        );
+      })
+    );
   
-//     self.clients.claim();
-//   });
+    self.clients.claim();
+  });
   
   // fetch
   self.addEventListener("fetch", function(evt) {
-    if (evt.request.url.includes("/api/")) {
+    if (evt.request.url.includes("/api/transaction")) {
       evt.respondWith(
         caches.open(DATA_CACHE_NAME).then(cache => {
           return fetch(evt.request)
             .then(response => {
               // If the response was good, clone it and store it in the cache.
               if (response.status === 200) {
-                cache.put(evt.request.url, response.clone());
+                cache.put(evt.request, response.clone());
               }
               return response;
             })
