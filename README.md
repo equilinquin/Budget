@@ -16,6 +16,8 @@ Check out the deployed page here: https://evening-anchorage-14088.herokuapp.com/
 
 -Run `npm start` or `node server.js`.
 
+-Comment out the mongodb `heroku` port and uncomment the mongodb `local` port.
+
 -Open your browser to: localhost:3300.
 
 ## Built with
