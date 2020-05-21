@@ -1,4 +1,7 @@
-# Budget
+# Budget App
+
+## User Story
+AS A consumer I WANT an app that will help track my spending and savings SO THAT I can have a better understanding of my budget.
 
 ## Description
 
