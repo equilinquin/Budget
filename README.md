@@ -10,41 +10,28 @@ Check out the deployed page here: https://evening-anchorage-14088.herokuapp.com/
 
 ## Local Deployment
 
--Clone repo onto your machine
-
--Run `npm install` or `npm i`.
-
--Run `npm start` or `node server.js`.
-
--Comment out the mongodb `heroku` port and uncomment the mongodb `local` port.
-
--Open your browser to: localhost:3300.
+- Clone repo onto your machine
+- Run `npm install` or `npm i`.
+- Run `npm start` or `node server.js`.
+- Comment out the mongodb `heroku` port and uncomment the mongodb `local` port.
+- Open your browser to: localhost:3300.
 
 ## Built with
 
--HTML
-
--Bootstrap
-
--Javascript
-
--Service Worker
-
--Manifest
-
--IndexedDB
+- HTML
+- Bootstrap
+- Javascript
+- Service Worker
+- Manifest
+- IndexedDB
 
 ## Packages Used
 
--Compression
-
--Mongoose
-
--MongoDB
-
--Morgan
-
--Express
+- Compression
+- Mongoose
+- MongoDB
+- Morgan
+- Express
 
 ## Images of Deployed Site
 
