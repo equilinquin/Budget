@@ -9,7 +9,7 @@ This app allows a user to make changes to a budget online and offline.  Changes 
 
 ## Deployment
 
-Check out the deployed page here: https://evening-anchorage-14088.herokuapp.com/
+Check out the deployed page here: https://budgetappegq.herokuapp.com/
 
 ## Local Deployment
 
